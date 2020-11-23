@@ -1,0 +1,74 @@
+<html>
+
+<head>
+     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+
+</head>
+
+<body>
+    <div class="ui raised padded container segment">
+        <h3 class="ui block header">
+  <i class="plug icon"></i>
+  <div class="content">
+    Upload Image OR  Copy link
+  </div>
+    <i class="copy icon"></i>
+  
+</h3>
+        <div class="ui two column stackable grid container">
+            <div class="column">
+                <!-- input for image upload -->
+                <div class="ui input">
+                    <input type="file" name="inpFile" id="inpFile">
+                    <br />
+                </div>
+            </div>
+            <!-- input for link -->
+            <div class="column">
+                <div class="ui action input">
+                    <input type="text" id="txtInput" placeholder="image link...">
+                    <button class="ui button" id="getLink"><i class="linkify icon"></i>Get link</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="ui segment">
+            <div class="form-input">
+                <label for="file">
+                    <img class="ui centered medium image" id="img" crossorigin src="https://i.imgur.com/JlUvsxa.jpg"
+                        />
+                    <!-- <button type="button" class="imgRemove" onclick="myImgRemoveFunctionOne()"></button> -->
+                </label>
+                <!-- <input type="file" name="image_one" id="file" accept="image/*" onchange="showPreviewOne(event);"> -->
+            </div>
+        </div>
+        <button class="ui button" id="predict"><i class="cog icon"></i>Predict</button>
+        <div class="ui very basic collapsing celled table" id="text">
+            <table id="table">
+                <th>Prediction</th>
+                <th>Probability</th>
+                <tr id="rw1">
+
+                </tr>
+                <tr id="rw2">
+
+                </tr>
+                <tr id="rw3">
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+</body>
+
+<!-- Add an image that we will use to test -->
+<!-- Load index.js after the content of the page -->
+<script src="index.js"></script>
+
+</html>
